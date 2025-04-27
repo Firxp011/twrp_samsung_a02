@@ -8,21 +8,26 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from PitchBlack Recovery's custom product configuration instead of OmniROM's
+# Delete any line that imports OmniROM's vendor config
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit from a02 device
 $(call inherit-product, device/samsung/a02/device.mk)
 
+# Otherwise, If you have 32-bit device, add the below line instead of above line
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
+
+# For some dalvik improvement, better to keep it
+$(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
+
+# If you want full multilingual support
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+BOARD_VENDOR := samsung
 PRODUCT_DEVICE := a02
 PRODUCT_NAME := omni_a02
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A022F
 PRODUCT_MANUFACTURER := samsung
 
-PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="a02xx-user 11 RP1A.200720.012 A022FXXS3BWH1 release-keys"
-
-BUILD_FINGERPRINT := samsung/a02xx/a02:11/RP1A.200720.012/A022FXXS3BWH1:user/release-keys
