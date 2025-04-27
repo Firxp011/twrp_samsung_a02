@@ -15,9 +15,6 @@ $(call inherit-product, vendor/pb/config/common.mk)
 # Inherit from a02 device
 $(call inherit-product, device/samsung/a02/device.mk)
 
-# Otherwise, If you have 32-bit device, add the below line instead of above line
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
-
 BOARD_VENDOR := samsung
 PRODUCT_DEVICE := a02
 PRODUCT_NAME := omni_a02
