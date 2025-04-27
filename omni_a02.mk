@@ -18,12 +18,6 @@ $(call inherit-product, device/samsung/a02/device.mk)
 # Otherwise, If you have 32-bit device, add the below line instead of above line
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
-# For some dalvik improvement, better to keep it
-$(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
-
-# If you want full multilingual support
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 BOARD_VENDOR := samsung
 PRODUCT_DEVICE := a02
 PRODUCT_NAME := omni_a02
