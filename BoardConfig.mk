@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-MAINTAINER := "Firxp011 @Firxp011"
+MAINTAINER := "Firxp011"
 DEVICE_PATH := device/samsung/a02
 
 # For building with minimal manifest
